@@ -2,7 +2,7 @@
 @section('content')
 <section>
   <div class="container">
-    <form action="{{route('admin.types.store')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('admin.technologies.store')}}" method="POST" enctype="multipart/form-data">
       @csrf
       <div class="mb-3">
         <label for="name" class="form-label">Name</label>

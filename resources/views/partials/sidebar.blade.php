@@ -6,13 +6,16 @@
     <div class="d-flex">
         <ul>
             <li>
-                <a href="{{route('admin.dashboard')}}">Dashboard</a>
+                <a class="nav-link {{Route::currentRouteName() == 'admin.dashboard.index' ? 'text-white' : ''}}" href="{{route('admin.dashboard')}}">Dashboard</a>
             </li>
             <li>
-                <a href="{{route('admin.projects.index')}}">Projects</a>
+                <a class="nav-link {{Route::currentRouteName() == 'admin.projects.index' ? 'text-white' : ''}}" href="{{route('admin.projects.index')}}">Projects</a>
             </li>
             <li>
-                <a href="{{route('admin.types.index')}}">Types</a>
+                <a class="nav-link {{Route::currentRouteName() == 'admin.types.index' ? 'text-white' : ''}}" href="{{route('admin.types.index')}}">Types</a>
+            </li>
+            <li>
+                <a class="nav-link {{Route::currentRouteName() == 'admin.technologies.index' ? 'text-white' : ''}}" href="{{route('admin.technologies.index')}}">Technologies</a>
             </li>
         </ul>
     </div>

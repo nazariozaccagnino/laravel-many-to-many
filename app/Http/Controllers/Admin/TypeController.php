@@ -33,7 +33,7 @@ class TypeController extends Controller
         $form_data = $request->all();
         $form_data['slug'] = Type::generateSlug($form_data['name']);
         $new_type = Type::create($form_data);
-        return redirect()->route('admin.types.show', $new_type->slug)->with('created', $new_type->title . ' è stato aggiunto');
+        return redirect()->route('admin.types.show', $new_type->slug)->with('created', $new_type->name . ' è stato aggiunto');
     }
 
     /**
