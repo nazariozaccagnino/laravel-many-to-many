@@ -22,7 +22,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.types.create');
     }
 
     /**
@@ -30,7 +30,10 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+        $form_data['slug'] = Type::generateSlug($form_data['name']);
+        $new_type = Type::create($form_data);
+        return redirect()->route('admin.types.show', $new_type->slug)->with('created', $new_type->title . ' è stato aggiunto');
     }
 
     /**
