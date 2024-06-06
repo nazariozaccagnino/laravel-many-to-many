@@ -27,6 +27,18 @@
       <div class="alert alert-danger">{{ $message }}</div>
     @enderror
       </div>
+      <div class="mb-3">
+                <label for="type_id" class="form-label">Select type of project</label>
+                <select name="type_id" id="type_id" class="form-control @error('type_id') is-invalid @enderror">
+                    <option value="">Select type</option>
+                  @foreach ($types as $type)
+                      <option value="{{$type->id}}" {{ $type->id == old('type_id') ? 'selected' : '' }}>{{$type->name}}</option>
+                  @endforeach
+                </select>
+                @error('type_id')
+                <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     @endsection
